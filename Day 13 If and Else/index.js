@@ -220,5 +220,199 @@ players.forEach(player => {
     } else {
         console.log(`${player.name} No goals`)
     }
+
+
+
+
+
+
+
+
+
+
+// AND && Logical operators //
+const user = {
+    age: 20,
+    premium: true
+};
+if (user.age >= 18 && user.premium) {
+    console.log('Premium Adult')
+}
+
+
+
+
+const laptop = {
+    brand: "Apple",
+    ram: 32
+};
+if (laptop.brand === 'Apple' && laptop.ram >= 16) {
+    console.log('Poweful Mac')
+}
+
+
+
+
+const players = [
+    {
+        name: "Mahdi",
+        goals: 35,
+        assists: 10
+    },
+    {
+        name: "Jack",
+        goals: 8,
+        assists: 12
+    },
+    {
+        name: "Emma",
+        goals: 18,
+        assists: 6
+    }
+];
+players.forEach(player => {
+    if (player.goals >= 15 && player.assists >= 5) {
+        console.log(`${player.name}`)
+    }
+});
+// ==================================================================== //
+
+
+
+
+
+
+// OR || Logical operators //
+const game = "Minecraft";
+if (game === 'Minecraft' || game === 'CS2') {
+    console.log('Popular Game')
+}
+
+
+
+
+
+const Steamuser = {
+    premium: false,
+    admin: true
+};
+if (Steamuser.admin || Steamuser.premium) {
+    console.log('Acess Granted')
+}
+// ==================================================================== //
+
+
+
+
+
+
+
+// NOT ! Logical operators //
+const Spotifyuser = {
+    name: "Mahdi",
+    premium: false
+};
+if (!Spotifyuser.premium) {
+    console.log(`Dear ${Spotifyuser.name} please Upgrade to Premium`)
+}
+
+
+
+
+
+
+
+const steamUsers = [
+    {
+        username: "Mahdi",
+        premium: true,
+        age: 20
+    },
+    {
+        username: "Jack",
+        premium: false,
+        age: 17
+    },
+    {
+        username: "Emma",
+        premium: true,
+        age: 16
+    }
+];
+steamUsers.forEach(users => {
+    if (users.age >= 18 && users.premium) {
+        console.log(`${users.username} have Full Access`)
+    } else if (users.premium || users.age >= 18){
+        console.log(`${users.username} have Limited Access`)
+    } else {
+        console.log(`${users.username} Have no Access`)
+    }
+});
+// ==================================================================== //
+
+
+
+
+
+
+
+// ? : Ternary operators //
+const JackAge = 22;
+console.log(JackAge >= 18 ? 'Adult' : 'Minor')
+
+
+
+
+const SteamGame = 'Valorant';
+console.log(SteamGame === 'Valorant' ? 'FPS' : 'Other genre')
+
+
+
+
+const YouTubeuser = {
+    name: "Mahdi",
+    premium: false
+};
+console.log(YouTubeuser.premium ? `${YouTubeuser.name} ⭐` : `${YouTubeuser.name}`)
+
+
+
+
+
+const price = 150;
+const Status = price >= 100 ? 'Expensive' : 'Cheap'
+console.log(Status)
+
+
+
+
+const Maclaptop = {
+    brand: "Apple",
+    ram: 32
+};
+console.log(Maclaptop.ram >= 16 ? 'Pro' : 'Basic');
+
+
+
+
+
+const USAplayers = [
+    {
+        name: "Mahdi",
+        goals: 35
+    },
+    {
+        name: "Jack",
+        goals: 8
+    },
+    {
+        name: "Emma",
+        goals: 18
+    }
+];
+USAplayers.forEach(player => {
+    console.log(player.goals >= 30 ? `${player.name} is World Class` : player.goals >= 15 ? `${player.name} is Professional` : `${player.name} - Rising Star`)
+}); 
+// I'm going to explain this code. if player have goals over than 30 print player name and Is World Class, Else if player have goals between 15-29 print player name + Is Professional, Else player score is under 14 print player name + - Rising Star //
 });
 // =========================================================/
