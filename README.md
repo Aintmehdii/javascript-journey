@@ -21,7 +21,7 @@ This repository documents my journey of learning JavaScript from scratch.
 - [x] Nested Objects & Arrays
 - [x] Loops
 - [x] Nested Loops
-- [ ] If / Else
+- [x] If / Else
 - [ ] Functions
 - [x] Higher Order Array Methods
 - [ ] DOM
