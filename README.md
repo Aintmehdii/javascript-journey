@@ -22,7 +22,7 @@ This repository documents my journey of learning JavaScript from scratch.
 - [x] Loops
 - [x] Nested Loops
 - [x] If / Else
-- [ ] Functions
+- [x] Functions
 - [x] Higher Order Array Methods
 - [ ] DOM
 - [ ] Async JavaScript
