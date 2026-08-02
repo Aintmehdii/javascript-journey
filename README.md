@@ -24,5 +24,6 @@ This repository documents my journey of learning JavaScript from scratch.
 - [x] If / Else
 - [x] Functions
 - [x] Higher Order Array Methods
+- [x] ES6 Tools 
 
 Thanks for visiting my repository! 😊
