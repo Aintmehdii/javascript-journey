@@ -15,8 +15,7 @@ Understand JavaScript concepts through hands-on coding
 Track my progress over time
 Eventually move from fundamentals into more advanced JavaScript and web development
 
-============================================
-📈 Progress
+
 
 Modern JavaScript: 🟢 In Progress
 ============================================
