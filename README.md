@@ -1,11 +1,9 @@
 🚀 JavaScript Journey
-
 Welcome to my JavaScript learning journey!
 This repository documents my progress as I learn JavaScript from the fundamentals to more advanced concepts through daily practice, exercises, and mini-projects.
 
 
 🎯 Goal
-
 The goal of this repository is to:
 
 Build a strong foundation in JavaScript
@@ -17,7 +15,6 @@ Eventually move from fundamentals into more advanced JavaScript and web developm
 
 
 📈 Progress
-
 Modern JavaScript: 🟢 In Progress
 
 
