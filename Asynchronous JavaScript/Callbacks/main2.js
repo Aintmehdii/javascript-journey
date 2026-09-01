@@ -59,3 +59,54 @@ function showPlayer(Player) {
 }
 
 getPlayer('Mahdi', 55, showPlayer)
+
+
+
+
+    function login(username, callback) {
+    const player = {
+        username: username,
+        loggedIn: true
+    }
+
+    setTimeout(() => {
+        callback(player)
+    }, 2000);
+}
+
+
+function getPlayerData(username, callback) {
+    const player = {
+        username: username,
+        level: 55,
+        premium: true
+    }
+
+    setTimeout(() => {
+        callback(player)
+    }, 2000);
+}
+
+
+function showDashboard(player) {
+    setTimeout(() => {
+        console.log(`Welcome ${player.username}`);
+        console.log(`Level: ${player.level}`);
+        console.log(`Premium: ${player.premium}`);
+    }, 2000);
+}
+
+
+login("Mahdi", (user) => {
+
+    console.log(user.username);
+
+    getPlayerData(user.username, (player) => {
+
+        console.log(player.level);
+
+        showDashboard(player);
+
+    });
+
+});
