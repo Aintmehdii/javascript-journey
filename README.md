@@ -17,7 +17,7 @@ Eventually move from fundamentals into more advanced JavaScript and web developm
 
 
 
-Asynchronous JavaScript: 🟢 In Progress
+DOM JavaScript: 🟢 In Progress
 ============================================
 
 🛠️ Technologies
