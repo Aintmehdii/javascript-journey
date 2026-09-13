@@ -27,3 +27,42 @@ startBtn.addEventListener("click", ()=>{
 gameBox.addEventListener("mousemove", (event)=>{
     gameStatus.textContent = `X: ${event.clientX} | Y: ${event.clientY}`
 })
+
+
+
+// ============================================================== // 
+
+
+
+const game = document.querySelector("#game")
+const player = document.createElement("div")
+const status = document.createElement("p")
+
+player.textContent = "🎮 Player"
+status.textContent = "waiting..."
+game.appendChild(player)
+game.appendChild(status)
+
+player.addEventListener("mouseenter", ()=>{
+    status.textContent = "🟢 Player selected!"
+})
+player.addEventListener("mouseleave", ()=>{
+    status.textContent = "🔴 Player deselected!"
+})
+
+document.addEventListener("keydown", (event)=>{
+    if (event.key === "ArrowUp") {
+        status.textContent = "Player moved ⬆️"
+    } else if(event.key === "ArrowDown"){
+        status.textContent = "Player moved ⬇️"
+    } else if(event.key === "ArrowLeft"){
+        status.textContent = "Player moved ⬅️"
+    } else if(event.key === "ArrowRight"){
+        status.textContent = "Player moved ➡️"
+    }
+})
+
+player.addEventListener("click", ()=>{
+    status.textContent = "🔥 Player clicked!"
+})
+
