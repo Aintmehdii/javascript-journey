@@ -1,11 +1,15 @@
+    
 const todoInput = document.querySelector("#todoInput")
 const addBtn = document.querySelector("#addBtn")
 const todoList = document.querySelector("#todoList")
 const counter = document.querySelector("#counter")
 const completedCounter = document.querySelector("#completedCounter")
 
+
 let todoCount = 0
 let todocompletedCounter = 0
+
+
 addBtn.addEventListener("click", ()=>{
     if (todoInput.value.trim() === "") return
     const newtodo = document.createElement("div")
@@ -13,12 +17,16 @@ addBtn.addEventListener("click", ()=>{
     todoCount ++
     counter.textContent = `Total: ${todoCount}`
 
+    localStorage.setItem("todo", todoInput.value)
+
     const deleteBtn = document.createElement("button")
     deleteBtn.textContent = "Delete"
     deleteBtn.addEventListener("click", ()=>{
         newtodo.remove()
         todoCount --
         counter.textContent = `Total: ${todoCount}`
+    
+        
 
         if (newtodo.classList.contains("completed")) {
             todocompletedCounter--
@@ -31,6 +39,8 @@ addBtn.addEventListener("click", ()=>{
     completeBtn.textContent = "Completed"
     completeBtn.addEventListener("click", ()=>{
         newtodo.classList.toggle("completed")
+
+        
         
         if (newtodo.classList.contains("completed")) {
             todocompletedCounter ++
@@ -48,3 +58,12 @@ addBtn.addEventListener("click", ()=>{
     todoList.appendChild(newtodo)
     todoInput.value = ""
 })
+
+const savedTodo = localStorage.getItem("todo")
+
+if (savedTodo) {
+    const newtodo = document.createElement("div")
+    newtodo.textContent = `Task: ${savedTodo}`
+
+    todoList.appendChild(newtodo)
+}
