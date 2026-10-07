@@ -29,3 +29,21 @@ const mouseMessage = document.querySelector("#mouseMessage")
 const mousePosition = document.querySelector("#mousePosition")
 
 
+addGameBtn.addEventListener("click", ()=>{
+    const newGame = document.createElement("div")
+    newGame.textContent = `Game: ${gameInput.value}`
+    const br = document.createElement("br")
+    const removenewGame = document.createElement("button")
+    removenewGame.textContent = "Remove"
+
+    removenewGame.addEventListener("click", ()=>{
+        newGame.remove()
+    })
+
+    gameList.appendChild(newGame)
+    newGame.appendChild(br)
+    newGame.appendChild(removenewGame)
+})
+
+
+
