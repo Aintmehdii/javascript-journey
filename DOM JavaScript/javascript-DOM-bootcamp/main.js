@@ -29,6 +29,9 @@ const mouseMessage = document.querySelector("#mouseMessage")
 const mousePosition = document.querySelector("#mousePosition")
 
 
+
+
+
 addGameBtn.addEventListener("click", ()=>{
     const newGame = document.createElement("div")
     newGame.textContent = `Game: ${gameInput.value}`
@@ -47,3 +50,52 @@ addGameBtn.addEventListener("click", ()=>{
 
 
 
+
+let currentlevelDisplay = 1
+levelUpBtn.addEventListener("click", ()=>{
+    currentlevelDisplay += 1
+    levelDisplay.textContent = `Level: ${currentlevelDisplay}`
+})
+
+
+
+
+let currentcoinsDisplay = 0
+coinsBtn.addEventListener("click", ()=>{
+    currentcoinsDisplay += 100
+    coinsDisplay.textContent = `Coins: ${currentcoinsDisplay}`
+})
+
+
+
+statusBtn.addEventListener("click", ()=>{
+    statusDisplay.classList.toggle("online")
+    if (statusDisplay.classList.contains("online")) {
+        statusDisplay.textContent = "Online 🟢"
+    }else {
+        statusDisplay.textContent = "Offline 🔴"
+    }
+})
+
+
+
+
+loginForm.addEventListener("submit", (event)=>{
+    event.preventDefault()
+    if (loginInput.value.length >= 3 && passwordInput.value.length >= 4) {
+        loginMessage.textContent = "User saved successfuly!"
+        usernameDisplay.textContent = `Username: ${loginInput.value}`
+        loginMessage.classList.add("loginSuccess")
+        setTimeout(()=>{
+            loginMessage.textContent = ""
+            loginInput.value = ""
+            passwordInput.value = ""
+        }, 3000)
+    } else{
+        loginMessage.textContent = "Username or password is unvalid!"
+        loginMessage.classList.add("loginError")
+        setTimeout(()=>{
+            loginMessage.textContent = ""
+        }, 3000)
+    }
+})
