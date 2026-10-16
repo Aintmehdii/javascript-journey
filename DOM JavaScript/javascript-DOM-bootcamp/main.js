@@ -77,7 +77,7 @@ statusBtn.addEventListener("click", ()=>{
     }
 })
 
-
+ 
 
 
 loginForm.addEventListener("submit", (event)=>{
@@ -97,5 +97,27 @@ loginForm.addEventListener("submit", (event)=>{
         setTimeout(()=>{
             loginMessage.textContent = ""
         }, 3000)
+    }
+})
+
+
+
+
+document.addEventListener("keydown", (event)=>{
+    event.preventDefault()
+    if (event.key === "ArrowUp") {
+        currentlevelDisplay += 1
+        levelDisplay.textContent = `Level: ${currentlevelDisplay}`
+    } else if (event.key === "ArrowDown") {
+        currentlevelDisplay = Math.max(1, currentlevelDisplay -= 1)
+        levelDisplay.textContent = `Level: ${currentlevelDisplay}`
+    }
+})
+document.addEventListener("keydown", (event)=>{
+    event.preventDefault()
+    if (event.key === "Enter") {
+        alert("User logged in!")
+    } else if(event.key === "Escape"){
+        alert("User logged out!")
     }
 })
