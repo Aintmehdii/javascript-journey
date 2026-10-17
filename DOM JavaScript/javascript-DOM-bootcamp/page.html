@@ -8,9 +8,21 @@
     <script src="maintest.js" defer></script>
 </head>
 <body>
-    <h1 id="title">🎮 Gozo Dashboard</h1>
+    <h1 id="title">🎮 Dashboard</h1>
 
-    <button id="themeBtn">🌙 Dark Mode</button>
+    <button id="themeBtn">🌞 White Mode</button>
+    <section id="LoginSection">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input id="loginInput" placeholder="Username">
+                <input id="passwordInput" type="password"
+                    placeholder="Password">
+                <button type="submit">Login</button>
+            </form>
+            <p id="loginMessage"></p>
+    </section>
+
+    <hr>
 
     <section id="profile">
         <h2>Player Profile</h2>
@@ -34,19 +46,6 @@
         <button id="addGameBtn">Add Game</button>
         <br><br>
         <div id="gameList"></div>
-    </section>
-
-    <hr>
-
-    <section>
-        <h2>Login</h2>
-        <form id="loginForm">
-            <input id="loginInput" placeholder="Username">
-            <input id="passwordInput" type="password"
-                   placeholder="Password">
-            <button type="submit">Login</button>
-        </form>
-        <p id="loginMessage"></p>
     </section>
 
     <hr>
