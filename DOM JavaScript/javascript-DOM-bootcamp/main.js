@@ -28,6 +28,7 @@ const mouseArea = document.querySelector("#mouseArea")
 const mouseMessage = document.querySelector("#mouseMessage")
 const mousePosition = document.querySelector("#mousePosition")
 
+const LoginSection = document.querySelector("#LoginSection")
 
 
 
@@ -96,6 +97,8 @@ loginForm.addEventListener("submit", (event)=>{
         loginMessage.classList.add("loginError")
         setTimeout(()=>{
             loginMessage.textContent = ""
+            loginInput.value = ""
+            passwordInput.value = ""
         }, 3000)
     }
 })
@@ -104,20 +107,44 @@ loginForm.addEventListener("submit", (event)=>{
 
 
 document.addEventListener("keydown", (event)=>{
-    event.preventDefault()
     if (event.key === "ArrowUp") {
         currentlevelDisplay += 1
+        keyboardMessage.textContent = `Level: ${currentlevelDisplay}`
         levelDisplay.textContent = `Level: ${currentlevelDisplay}`
     } else if (event.key === "ArrowDown") {
         currentlevelDisplay = Math.max(1, currentlevelDisplay -= 1)
+        keyboardMessage.textContent = `Level: ${currentlevelDisplay}`
         levelDisplay.textContent = `Level: ${currentlevelDisplay}`
     }
 })
 document.addEventListener("keydown", (event)=>{
-    event.preventDefault()
     if (event.key === "Enter") {
-        alert("User logged in!")
+        keyboardMessage.textContent = "User logged in!"
+        statusDisplay.textContent = "Online 🟢"
     } else if(event.key === "Escape"){
-        alert("User logged out!")
+        keyboardMessage.textContent = "User logged out!"
+        statusDisplay.textContent = "Offline 🔴"
     }
+})
+
+
+
+
+mouseArea.addEventListener("mousemove", (event)=>{
+    mouseMessage.textContent = "Mouse entered!"
+    mousePosition.textContent = `X:${event.clientX} Y:${event.clientY}`
+})
+mouseArea.addEventListener("mouseleave", ()=>{
+    mouseMessage.textContent = "Mouse leaved!"
+})
+
+
+
+themeBtn.addEventListener("click", ()=>{
+    document.body.classList.toggle("whitetheme")
+        if (document.body.classList.contains("whitetheme")) {
+            themeBtn.textContent = "🌙 Dark Mode"
+        }else {
+            themeBtn.textContent = "🌞 White Mode"
+        }
 })
