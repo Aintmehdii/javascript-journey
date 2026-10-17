@@ -259,7 +259,7 @@ button:active {
 
 #mouseArea:hover {
     background: rgba(34, 211, 238, 0.13);
-    border-color: var(--pink);
+    border-color: var(--purple);
 }
 
 #mousePosition {
@@ -336,7 +336,7 @@ input:focus-visible {
     }
 }
 
-
+    /* ClassToggle */
 .online{
     color: #00ff7b;
 }
@@ -347,4 +347,94 @@ input:focus-visible {
 
 .loginSuccess{
     color: #00ff7b;
+}
+
+
+
+    /* WhiteTheme */
+body.whitetheme {
+    --bg: #f4f7ff;
+    --card: rgba(255, 255, 255, 0.9);
+    --card-border: rgba(99, 102, 241, 0.2);
+    --text: #1e293b;
+    --muted: #64748b;
+    --purple: #7c3aed;
+    --cyan: #0891b2;
+    --pink: #db2777;
+    --green: #059669;
+    --shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
+
+    background:
+        radial-gradient(ellipse at top left, #ede9fe 0%, transparent 40%),
+        radial-gradient(ellipse at bottom right, #cffafe 0%, transparent 40%),
+        var(--bg);
+
+    color: var(--text);
+}
+
+body.whitetheme section {
+    background: var(--card);
+    border-color: var(--card-border);
+}
+
+body.whitetheme #profile p {
+    background: rgba(99, 102, 241, 0.06);
+}
+
+body.whitetheme input {
+    color: var(--text);
+    background: #ffffff;
+    border-color: #cbd5e1;
+}
+
+body.whitetheme input::placeholder {
+    color: #94a3b8;
+}
+
+body.whitetheme input:focus {
+    border-color: var(--cyan);
+}
+
+body.whitetheme #themeBtn {
+    color: #0e7490;
+    background: rgba(8, 145, 178, 0.08);
+    border-color: rgba(8, 145, 178, 0.35);
+}
+
+body.whitetheme #gameList > * {
+    color: var(--text);
+    background: rgba(124, 58, 237, 0.05);
+    border-color: rgba(124, 58, 237, 0.2);
+}
+
+body.whitetheme #keyboardMessage {
+    color: #0e7490;
+    background: rgba(8, 145, 178, 0.06);
+    border-color: rgba(8, 145, 178, 0.35);
+}
+
+body.whitetheme #mouseArea {
+    color: #0e7490;
+    background: linear-gradient(
+        135deg,
+        rgba(124, 58, 237, 0.07),
+        rgba(8, 145, 178, 0.06)
+    );
+    border-color: rgba(8, 145, 178, 0.4);
+}
+
+body.whitetheme #mousePosition {
+    color: #db2777;
+}
+
+body,
+section,
+input,
+#gameList > *,
+#mouseArea {
+    transition:
+        background 0.8s,
+        color 0.8s,
+        border-color 0.7s,
+        box-shadow 0.7s;
 }
