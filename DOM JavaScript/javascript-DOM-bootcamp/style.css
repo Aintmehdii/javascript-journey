@@ -12,6 +12,7 @@
     --cyan: #22d3ee;
     --pink: #f472b6;
     --green: #34d399;
+    --red: #780606;
     --shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
 }
 
@@ -98,7 +99,9 @@ p {
 #statusDisplay {
     border-left-color: var(--green) !important;
 }
-
+#passwordDisplay {
+    border-left-color: var(--red) !important;
+}
 
 input {
     width: 100%;
@@ -171,13 +174,17 @@ button:active {
 }
 
 #coinsBtn {
-    background: linear-gradient(135deg, #d97706, #eab308);
-    color: #1c1604;
+    background: linear-gradient(135deg, #9333ea, #6366f1);
     border-color: transparent;
 }
 
 #statusBtn {
     background: linear-gradient(135deg, #059669, #10b981);
+    border-color: transparent;
+}
+
+#showPassword {
+    background: linear-gradient(135deg, #f50400, #780606);
     border-color: transparent;
 }
 
@@ -336,6 +343,19 @@ input:focus-visible {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     /* ClassToggle */
 .online{
     color: #00ff7b;
@@ -348,8 +368,6 @@ input:focus-visible {
 .loginSuccess{
     color: #00ff7b;
 }
-
-
 
     /* WhiteTheme */
 body.whitetheme {
