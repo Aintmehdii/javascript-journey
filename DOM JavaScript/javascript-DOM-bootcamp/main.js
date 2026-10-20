@@ -27,22 +27,55 @@ const password = document.querySelector("#password")
 const showPassword = document.querySelector("#showPassword")
 
 
-addGameBtn.addEventListener("click", ()=>{
-    const newGame = document.createElement("div")
-    newGame.textContent = `Game: ${gameInput.value}`
 
-    const br = document.createElement("br")
-    const removenewGame = document.createElement("button")
-    removenewGame.textContent = "Remove"
 
-    removenewGame.addEventListener("click", ()=>{
-        newGame.remove()
-    })
+let games = JSON.parse(localStorage.getItem("games")) || [];
 
-    gameList.appendChild(newGame)
-    newGame.appendChild(br)
-    newGame.appendChild(removenewGame)
-})
+games.forEach(gameName => {
+    const newGame = document.createElement("div");
+    newGame.textContent = `Game: ${gameName}`;
+
+    const br = document.createElement("br");
+    const removeNewGame = document.createElement("button");
+    removeNewGame.textContent = "Remove";
+    removeNewGame.classList.add("myGamesRemoveBtn")
+
+    removeNewGame.addEventListener("click", () => {
+        games = games.filter(game => game !== gameName);
+        localStorage.setItem("games", JSON.stringify(games));
+        newGame.remove();
+    });
+
+    newGame.appendChild(br);
+    newGame.appendChild(removeNewGame);
+    gameList.appendChild(newGame);
+});
+
+addGameBtn.addEventListener("click", () => {
+    const gameName = gameInput.value;
+
+    games.push(gameName);
+    localStorage.setItem("games", JSON.stringify(games));
+
+    const newGame = document.createElement("div");
+    newGame.textContent = `Game: ${gameName}`;
+
+    const br = document.createElement("br");
+    const removeNewGame = document.createElement("button");
+    removeNewGame.textContent = "Remove";
+    removeNewGame.classList.add("myGamesRemoveBtn")
+    
+    removeNewGame.addEventListener("click", () => {
+        games = games.filter(game => game !== gameName);
+        localStorage.setItem("games", JSON.stringify(games));
+        newGame.remove();
+    });
+
+    newGame.appendChild(br);
+    newGame.appendChild(removeNewGame);
+    gameList.appendChild(newGame);
+});
+
 
     
   
