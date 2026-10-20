@@ -12,7 +12,7 @@
     --cyan: #22d3ee;
     --pink: #f472b6;
     --green: #34d399;
-    --red: #780606;
+    --red: #f50400;
     --shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
 }
 
@@ -67,6 +67,55 @@ section {
     backdrop-filter: blur(14px);
     transition: transform 0.3s, border-color 0.3s;
 }
+
+#myGames {
+    position: relative;
+    max-width: 1000px;
+    margin: 28px auto;
+    padding: 28px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(14px);
+    transition: transform 0.3s, border-color 0.3s;
+}
+#myGames h2{
+    color: var(--red)
+}
+
+#myGames #addGameBtn {
+    background: linear-gradient(135deg, #f50400, #780606);
+    border-color: transparent;
+}
+.myGamesRemoveBtn {
+    background: linear-gradient(135deg, #f50400, #780606);
+    border-color: transparent;
+}
+#myGames input {
+    width: 100%;
+    max-width: 360px;
+    padding: 13px 15px;
+    margin: 8px 8px 8px 0;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text);
+    background: rgba(5, 9, 25, 0.8);
+    border: 1px solid #303958;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+#myGames input::placeholder {
+    color: #737f9f;
+}
+
+#myGames input:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.12);
+}
+
 
 section:hover {
     border-color: rgba(34, 211, 238, 0.45);
@@ -196,9 +245,9 @@ button:active {
 
 #gameList {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     gap: 14px;
-    margin-top: 18px;
+    margin-top: 10px;
 }
 
 #gameList > * {
@@ -212,7 +261,7 @@ button:active {
 
 #gameList > *:hover {
     transform: translateY(-3px);
-    border-color: var(--cyan);
+    border-color: var(--red);
 }
 
 
@@ -389,7 +438,15 @@ body.whitetheme {
 
     color: var(--text);
 }
-
+body.whitetheme #myGames input{
+    color: var(--text);
+    background: #ffffff;
+    border-color: #cbd5e1;
+}
+body.whitetheme #myGames input:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.12);
+}
 body.whitetheme section {
     background: var(--card);
     border-color: var(--card-border);
