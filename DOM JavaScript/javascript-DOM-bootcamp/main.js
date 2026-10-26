@@ -190,7 +190,6 @@ document.addEventListener("keydown", (event)=>{
 
 
 
-
 mouseArea.addEventListener("mousemove", (event)=>{
     mouseMessage.textContent = "Mouse entered!"
     mousePosition.textContent = `X:${event.clientX} Y:${event.clientY}`
