@@ -8,7 +8,8 @@ const player = {
     username: "Mahdi",
     level: 25,
     coins: 1500,
-    premium: true
+    premium: true,
+    CP: 0
 }
 localStorage.setItem("player", JSON.stringify(player))
 
