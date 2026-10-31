@@ -30,7 +30,17 @@ loginPlayer("Mahdi", (player) => {
     console.log(`${player.username} logged in: ${player.loggedIn}`);
 });
 
+function sayHello() {
+    console.log("Welcome to the game!");
+}
 
+function startGame(callback) {
+    console.log("Starting game...");
+
+    callback();
+}
+
+startGame(sayHello);
 
 function processPlayer(username, callback) {
     const player = {
