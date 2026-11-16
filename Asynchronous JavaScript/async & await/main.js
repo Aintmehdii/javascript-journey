@@ -46,3 +46,24 @@ async function printUser() {
 setTimeout(() => {
     printUser()
 }, 4000);
+
+
+
+
+function searchMatch() {
+        return new Promise((resolve)=>{
+        setTimeout(() => {  
+            resolve("CS2 match found!") }, 2000);
+        })
+}
+
+async function playCS2() {
+    console.log("Searching for a match...")
+
+    const result = await searchMatch()
+
+    console.log(result)
+    console.log("Connecting to server...")
+}
+
+playCS2()
