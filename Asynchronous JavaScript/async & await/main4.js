@@ -40,3 +40,13 @@ async function butGame() {
 }
 
 butGame()
+
+
+const buyBtn = document.querySelector("#buyBtn")
+const receipt = document.querySelector("#receipt")
+
+buyBtn.addEventListener("click", async()=>{
+    await purchaseGame(userBalance -= 40)
+    receipt.textContent = `$100 purchase successfull, current balance: ${userBalance}`
+        buyBtn.disabled = true
+})
