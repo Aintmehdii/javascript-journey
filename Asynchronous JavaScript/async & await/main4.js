@@ -1,4 +1,4 @@
-let userBalance = 0;
+let userBalance = 100;
 
 const buyBtn = document.querySelector("#buyBtn");
 const receipt = document.querySelector("#receipt");
@@ -8,7 +8,6 @@ const balanceDisplay = document.querySelector("#balance");
 function checkBalance() {
     return new Promise((solve) => {
         setTimeout(() => {
-            userBalance += 100;
             solve(userBalance);
         }, 500);
     });
