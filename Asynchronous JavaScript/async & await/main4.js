@@ -1,52 +1,70 @@
+let userBalance = 0;
+
+const buyBtn = document.querySelector("#buyBtn");
+const receipt = document.querySelector("#receipt");
+const status = document.querySelector("#status");
+const balanceDisplay = document.querySelector("#balance");
+
 function checkBalance() {
-    return new Promise((solve)=>{
+    return new Promise((solve) => {
         setTimeout(() => {
-            solve(userBalance =+ 100)
-        }, 1000);
-    })
+            userBalance += 100;
+            solve(userBalance);
+        }, 500);
+    });
 }
 
 function purchaseGame(balance) {
-    return new Promise((solve, reject)=>{
+    return new Promise((solve, reject) => {
         setTimeout(() => {
             if (balance >= 40) {
-                solve("Purchase successful!")
-            }else {
-                reject("Not enough money!")
+                solve("Purchase successful!");
+            } else {
+                reject("Not enough money!");
             }
-        }, 2000);
-    })
+        }, 1000);
+    });
 }
 
 function downloadGame() {
-    return new Promise((solve)=>{
+    return new Promise((solve) => {
         setTimeout(() => {
-            solve("Game downloaded successfully!")
-        }, 3000);
-    })
+            solve("Game downloaded successfully!");
+        }, 2000);
+    });
 }
 
-async function butGame() {
-    console.log("Checking balance...")
-    const Balance = await checkBalance()
-    console.log(Balance)
+async function buyGame() {
+    buyBtn.disabled = true;
+    receipt.textContent = "";
 
-    const purchase = await purchaseGame(userBalance)
-    console.log(purchase)
+    status.textContent = "Checking balance...";
 
-    const download = await downloadGame()
-    console.log(download)
-    console.log("Enjoy your game!")
+    const balance = await checkBalance();
+
+    balanceDisplay.textContent = `Balance: $${balance}`;
+
+    if (balance < 40) {
+        status.textContent = "Not enough money!";
+        buyBtn.disabled = false;
+        return;
+    }
+
+    const purchase = await purchaseGame(balance);
+
+    status.textContent = purchase;
+
+    userBalance -= 40;
+    balanceDisplay.textContent = `Balance: $${userBalance}`;
+
+    const download = await downloadGame();
+
+    status.textContent = download;
+
+    receipt.textContent =
+        `Purchase successful! Current balance: $${userBalance}`;
+
+    buyBtn.disabled = false;
 }
 
-butGame()
-
-
-const buyBtn = document.querySelector("#buyBtn")
-const receipt = document.querySelector("#receipt")
-
-buyBtn.addEventListener("click", async()=>{
-    await purchaseGame(userBalance -= 40)
-    receipt.textContent = `$100 purchase successfull, current balance: ${userBalance}`
-        buyBtn.disabled = true
-})
+buyBtn.addEventListener("click", buyGame);
